@@ -1,0 +1,5 @@
+name = "webassembly-feature-test"
+zone_id = "${zone_id}"
+type = "Webpack"
+account_id = "${account_id}"
+route = "webassembly-feature-test.that-test.site"

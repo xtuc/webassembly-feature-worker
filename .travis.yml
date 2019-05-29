@@ -1,0 +1,15 @@
+language: node_js
+
+branches:
+  only:
+    - master
+
+install:
+  - wget http://sven-dist.s3-website-us-east-1.amazonaws.com/wrangler
+  - chmod +x ./wrangler
+  - mkdir -p ~/.wrangler/config/
+  - envsubst < ci/default.toml > ~/.wrangler/config/default.toml
+  - envsubst < ci/wrangler.toml > wrangler.toml
+
+script:
+  - ./wrangler publish --release
